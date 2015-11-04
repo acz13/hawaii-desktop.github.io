@@ -1,21 +1,143 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Hawaii</title>
+    <description>The QtQuick and Wayland system</description>
+    <link>http://hawaiios.org</link>
+    <atom:link href="http://hawaiios.org/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ site.url }}{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <title>SDDM 0.13.0</title>
+        <description>&lt;p&gt;We are proud to announce the immediate availability of &lt;a href=&quot;https://github.com/sddm/sddm&quot;&gt;SDDM&lt;/a&gt; 0.13.0.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Change log:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Greeter inherits path environment variables from parent so that themes installed in non-standard paths will work.&lt;/li&gt;
+&lt;li&gt;Add ENABLE_PAM option to toggle PAM support at build time.&lt;/li&gt;
+&lt;li&gt;Allow overriding textColor in ComboBox.&lt;/li&gt;
+&lt;li&gt;Don&amp;#39;t cast QByteArray to (char *).&lt;/li&gt;
+&lt;li&gt;Disable greeters from loading KDE&amp;#39;s debug hander (fix CVE-2015-0856).&lt;/li&gt;
+&lt;li&gt;Fix multi-screen support for some setups.&lt;/li&gt;
+&lt;li&gt;Added Serbian translation.&lt;/li&gt;
+&lt;li&gt;Added Traditional Chinese translation.&lt;/li&gt;
+&lt;li&gt;Improved German translation.&lt;/li&gt;
+&lt;li&gt;Remove failsafe session entry.&lt;/li&gt;
+&lt;li&gt;Close the pipe fd passed to X server.&lt;/li&gt;
+&lt;li&gt;A few micro-optimizations.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;More information can be found &lt;a href=&quot;https://github.com/sddm/sddm/wiki/0.13.0-Release-Announcement&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sources and SHA1 hashes follow:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sddm/sddm/releases/download/v0.13.0/sddm-0.13.0.tar.xz&quot;&gt;sddm-0.13.0.tar.xz&lt;/a&gt; (SHA1: 0e022f8eed64307a2ca8536c71204954c2858106)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sddm/sddm/releases/download/v0.13.0/sddm-0.13.0.tar.gz&quot;&gt;sddm-0.13.0.tar.gz&lt;/a&gt; (SHA1: dcb5328b222cbf34f70956415a4da2017620b0c9)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 04 Nov 2015 00:00:00 +0100</pubDate>
+        <link>http://hawaiios.org/news/2015/11/04/sddm-0.13.0/</link>
+        <guid isPermaLink="true">http://hawaiios.org/news/2015/11/04/sddm-0.13.0/</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>SDDM 0.12.0</title>
+        <description>&lt;p&gt;We are proud to announce the immediate availability of &lt;a href=&quot;https://github.com/sddm/sddm&quot;&gt;SDDM&lt;/a&gt; 0.12.0.&lt;/p&gt;
+
+&lt;p&gt;This release features working Wayland sessions for the first time,
+but the greeter is still running on Xorg.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;This means that you will be able to login into a Wayland desktop
+environment without problems however the greeter screen still
+depends on X11.&lt;/p&gt;
+
+&lt;p&gt;Work on the Wayland support for the greeter has already been
+started and will likely be available with the next release.&lt;/p&gt;
+
+&lt;p&gt;Highlights of this release:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BACKWARDS-INCOMPATIBLE: SDDM now depends on Qt &amp;gt;= 5.3&lt;/li&gt;
+&lt;li&gt;BACKWARDS-INCOMPATIBLE: Display setup script is now killed if it hasn&amp;#39;t finished within 30 seconds&lt;/li&gt;
+&lt;li&gt;LICENSING: The Maldives non-free background has been replaced by a CC-BY-SA alternative&lt;/li&gt;
+&lt;li&gt;WAYLAND: Wayland sessions support&lt;/li&gt;
+&lt;li&gt;CONFIG: New sddm.conf option &lt;code&gt;XephyrPath&lt;/code&gt; (defaults to &lt;code&gt;/usr/bin/Xephyr&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;CONFIG: new sddm.conf option &lt;code&gt;ServerArguments&lt;/code&gt; (defaults to &lt;code&gt;-nolisten tcp&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;CONFIG: new sddm.conf option &lt;code&gt;DisplayStopCommand&lt;/code&gt; (executes Xstop)&lt;/li&gt;
+&lt;li&gt;THEMES: Assorted improvements to the default theme&lt;/li&gt;
+&lt;li&gt;BUGFIX: Honor TryExec in Xsession desktop files&lt;/li&gt;
+&lt;li&gt;BUGFIX: Fix session startup on zsh&lt;/li&gt;
+&lt;li&gt;BUILD: Allow setting a custom &lt;code&gt;DBUS_CONFIG_FILENAME&lt;/code&gt; at compile time&lt;/li&gt;
+&lt;li&gt;BUILD: Allow &lt;code&gt;SYSTEMD_SYSTEM_UNIT_DIR&lt;/code&gt; to be overridden at compile time&lt;/li&gt;
+&lt;li&gt;BUILD: Allow &lt;code&gt;QT_IMPORTS_DIR&lt;/code&gt; to be overridden at compile time&lt;/li&gt;
+&lt;li&gt;BUILD: No longer hardcode min/max UIDs, allow setting &lt;code&gt;UID_MIN&lt;/code&gt; and &lt;code&gt;UID_MAX&lt;/code&gt; at compile time&lt;/li&gt;
+&lt;li&gt;BUILD: Assorted FreeBSD fixes&lt;/li&gt;
+&lt;li&gt;BUILD: Fix build warnings with Qt 5.5&lt;/li&gt;
+&lt;li&gt;BUILD: Enable &lt;code&gt;QT_NO_CAST_FROM_ASCII&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;I18N: Added Arabic, contributed by Safa Alfulaij&lt;/li&gt;
+&lt;li&gt;I18N: Added Hungarian, contributed by @mortein79&lt;/li&gt;
+&lt;li&gt;I18N: Various i18n updates and improvements&lt;/li&gt;
+&lt;li&gt;I18N: Full right-to-left languages support&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;More information can be found &lt;a href=&quot;https://github.com/sddm/sddm/wiki/0.12.0-Release-Announcement&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sources and SHA1 hashes follow:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sddm/sddm/releases/download/v0.12.0/sddm-0.12.0.tar.gz&quot;&gt;sddm-0.12.0.tar.gz&lt;/a&gt; (SHA1: 9d2b1f7ac3bbbf7c60555b3809179f5c95449e09)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sddm/sddm/releases/download/v0.12.0/sddm-0.12.0.tar.xz&quot;&gt;sddm-0.12.0.tar.xz&lt;/a&gt; (SHA1: 985aee2bbafd42969353786cc3dd63b2695cb848)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 05 Sep 2015 00:00:00 +0200</pubDate>
+        <link>http://hawaiios.org/news/2015/09/05/sddm-0.12.0/</link>
+        <guid isPermaLink="true">http://hawaiios.org/news/2015/09/05/sddm-0.12.0/</guid>
+      </item>
+    
+      <item>
+        <title>QtAccountsService 0.6.0</title>
+        <description>&lt;p&gt;We are proud to announce the immediate availability of QtAccountsService 0.6.0.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Highlights of this release:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use extra-cmake-modules&lt;/li&gt;
+&lt;li&gt;Use standard installation directories&lt;/li&gt;
+&lt;li&gt;Use new CMake macros to generate camel case headers&lt;/li&gt;
+&lt;li&gt;Link to Qt5 targets rather than using the old qt5&lt;em&gt;use&lt;/em&gt;modules macro&lt;/li&gt;
+&lt;li&gt;Implemented UserAccount::setPassword&lt;/li&gt;
+&lt;li&gt;Export UsersModel to QML&lt;/li&gt;
+&lt;li&gt;Add a couple of small examples for C++ and QML&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 18 Jul 2015 00:00:00 +0200</pubDate>
+        <link>http://hawaiios.org/news/2015/07/18/qtaccountsservice-0.6.0/</link>
+        <guid isPermaLink="true">http://hawaiios.org/news/2015/07/18/qtaccountsservice-0.6.0/</guid>
+      </item>
+    
+      <item>
+        <title>Testing Hawaii 0.6.0</title>
+        <description>&lt;p&gt;A lot of work has been done lately for the upcoming release 0.6.0.
+Below a video that shows the bootstrap of the Hawaii development snapshot.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;As you can see now SDDM is capable of running Wayland sessions and the desktop
+startup is really fast.&lt;/p&gt;
+
+&lt;p&gt;Click &lt;a href=&quot;https://plus.google.com/b/106410682256187719404/106410682256187719404/videos?pid=6168151476572227058&amp;amp;oid=106410682256187719404&quot;&gt;here&lt;/a&gt; to see the video.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Jul 2015 00:00:00 +0200</pubDate>
+        <link>http://hawaiios.org/news/2015/07/06/testing-hawaii-0.6.0/</link>
+        <guid isPermaLink="true">http://hawaiios.org/news/2015/07/06/testing-hawaii-0.6.0/</guid>
+      </item>
+    
   </channel>
 </rss>
